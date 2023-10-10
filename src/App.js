@@ -1,24 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import PrivateRouter from "./customRouter/PrivateRouter";
+import PageRender from "./customRouter/PageRender";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import Intro from "./components/Intro";
+import Landing from "./components/Landing";
+import Overview from "./pages/Overview";
 
 function App() {
+  const [show, setShow] = useState(false);
+  const auth = true;
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className={auth === true ? `visible` : `hidden`}>
+        <Navbar />
+      </div>
+      <div className="font-lato">
+        <Routes>
+          <Route
+            exact
+            path="/"
+            element={
+              auth === true ? (
+                <Overview />
+              ) : (
+                <Landing show={show} setShow={setShow} />
+              )
+            }
+          />
+          <Route exact path="/" element={<PrivateRouter />}>
+            <Route exact path="/:page" element={<PageRender />} />
+            <Route exact path="/:page/:id" element={<PageRender />} />
+          </Route>
+        </Routes>
+      </div>
+      {/* <Footer /> */}
+    </Router>
   );
 }
 

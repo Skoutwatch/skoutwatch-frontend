@@ -1,13 +1,116 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+
+@tailwind base;
+
+:root {
+    --primary: #D9D9D9;
+    --secondary: #231546
+  }
+
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--secondary) var(--primary);
+  }
+
+  *::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  
+  *::-webkit-scrollbar-track {
+    background: var(--primary);
+    border-radius: 0px;
+  }
+  
+  *::-webkit-scrollbar-thumb {
+    background-color: var(--secondary);
+    border-radius: 50px;
+    border: 0px solid var(--primary);
+  }
+
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .my-table-spacing {
+    border-spacing: theme("spacing.3");
+  }
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@layer utilities {
+  td,
+  th {
+    @apply my-[8px] px-[30px];
+  }
+
+  .bodytd {
+    @apply px-[10px];
+  }
+
+  .body td {
+    @apply py-[20px]
+  }
+
+  .body2 td {
+    @apply py-[10px]
+  }
+
+
+thead td {
+  @apply py-[10px]
+}
+
+/* td div {
+  @apply my-[10px]
+} */
+}
+
+/* @import url("./styles/loading.css"); */
+
+@layer utilities {
+    @variants responsive {
+      /* Hide scrollbar for Chrome, Safari and Opera */
+      .no-scrollbar::-webkit-scrollbar {
+          display: none;
+      }
+
+      /* Hide scrollbar for IE, Edge and Firefox */
+      .no-scrollbar {
+          -ms-overflow-style: none;  /* IE and Edge */
+          scrollbar-width: none;  /* Firefox */
+      }
+    }
+  }
+
+  @keyframes scroll{
+    from{
+        transform: translateX(0);
+
+    }
+    to{
+        transform: translateX(-100%);
+    }
+}
+
+.slider{
+    overflow: hidden;
+    padding: 60px, 0;
+    background: white;
+    white-space: nowrap;
+}
+
+.slider:hover .slide-track{
+    animation-play-state: paused;
+}
+
+.slider .slide-track{
+    display: flex;
+    animation: scroll 10s linear infinite;
+    display: flex;
+    width: calc(250px * 14);
+}
+
+.slider .slide{
+    /* height: 100px; */
+    width: 250px;
 }
