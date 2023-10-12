@@ -2,7 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import Avatar from "./Avatar";
 import logo from "../assets/logo.png";
-import { MdViewComfy } from "react-icons/md";
+import { AiFillHome } from "react-icons/ai";
 import { BiSolidMoviePlay } from "react-icons/bi";
 import { MdPersonSearch } from "react-icons/md";
 import { IoCaretDownOutline } from "react-icons/io5";
@@ -36,8 +36,8 @@ const Navbar = () => {
                   };
                 }}
               >
-                <MdViewComfy className="text-[25px]" />
-                Overview
+                <AiFillHome className="text-[25px]" />
+                Home
               </NavLink>
             </h4>
           </div>
@@ -108,15 +108,15 @@ const Navbar = () => {
                 to="/leaderboard"
                 style={({ isActive }) => {
                   return {
-                    ccolor: isActive ? "#D99A26" : "#666666",
+                    color: isActive ? "#D99A26" : "#666666",
                     borderBottomColor: isActive ? "#D99A26" : "",
                     borderBottomWidth: isActive ? "3px" : "0px",
                     borderBottomStyle: "solid",
                   };
                 }}
               >
-                <SlBadge className="text-[25px]" />
                 Leaderboard
+                <SlBadge className="text-[25px]" />
               </NavLink>
             </h4>
           </div>
@@ -170,8 +170,8 @@ const Navbar = () => {
               };
             }}
           >
-            <MdViewComfy className="text-[25px]" />
-            Overview
+            <AiFillHome className="text-[25px]" />
+            Home
           </NavLink>
 
           <NavLink

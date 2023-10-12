@@ -35,9 +35,9 @@ const Overview = () => {
           </div>
           <TopplayerTable />
           <div className="h-[60px]">
-            <button className="pr-[30px] text-[16px] font-medium  flex justify-end items-center absolute right-0 bottom-[20px] gap-[12px] text-primary">
+            <button className="pr-[30px] text-[16px] font-semibold  flex justify-end items-center absolute right-0 bottom-[20px] gap-[12px] text-primary">
               <h4>Show all</h4>
-              <BsArrowRight />
+              <BsArrowRight className="stroke-[0.5px]" />
             </button>
           </div>
         </div>

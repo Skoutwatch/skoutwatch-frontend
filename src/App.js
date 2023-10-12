@@ -7,6 +7,7 @@ import Footer from "./components/Footer";
 import Intro from "./components/Intro";
 import Landing from "./components/Landing";
 import Overview from "./pages/Overview";
+import Login from "./pages/Login";
 
 function App() {
   const [show, setShow] = useState(false);
@@ -23,15 +24,23 @@ function App() {
             path="/"
             element={
               auth === true ? (
-                <Overview />
+                <Landing show={show} setShow={setShow} />
               ) : (
+                // <Overview />
                 <Landing show={show} setShow={setShow} />
               )
             }
           />
+          <Route
+            exact
+            path="/login"
+            element={auth === false ? <Login /> : <Overview />}
+          />
+
           <Route exact path="/" element={<PrivateRouter />}>
             <Route exact path="/:page" element={<PageRender />} />
             <Route exact path="/:page/:id" element={<PageRender />} />
+            <Route exact path="/:page/:id/:extraId" element={<PageRender />} />
           </Route>
         </Routes>
       </div>

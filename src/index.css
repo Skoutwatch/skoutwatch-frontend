@@ -51,6 +51,10 @@
     @apply py-[20px]
   }
 
+  .leaderboardtd  {
+    @apply py-[25px]
+  }
+
   .body2 td {
     @apply py-[10px]
   }
@@ -114,3 +118,27 @@ thead td {
     /* height: 100px; */
     width: 250px;
 }
+
+.custom-arrow {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 5px 5px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.custom-prev-arrow {
+  position: absolute;
+  left: 10px; /* Adjust the left position as needed */
+  top: 50%; /* Vertically center the button */
+  transform: translateY(-50%);
+}
+
+.custom-next-arrow {
+  position: absolute;
+  right: 10px; /* Adjust the right position as needed */
+  top: 50%; /* Vertically center the button */
+  transform: translateY(-50%);
+}
+
