@@ -26,7 +26,7 @@ import stroke2 from "../assets/stroke2.png";
 
 const Landing = ({ show, setShow }) => {
   return (
-    <div>
+    <div className="pt-[80px] xl:pt-[0px]">
       <div className="bg-white xl:px-[150px] 2xl:px-[250px] lg:px-[70px] px-[15px] md:px-[30px] pb-[50px] min-h-screen">
         <div className="mt-[30px]">
           <h4 className="text-primary flex justify-center text-[30px] md:text-[50px] xl:text-[64px] font-semibold sm:w-2/3 mx-auto text-center leading-tight ">
