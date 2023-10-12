@@ -75,6 +75,18 @@ const OnePlayer = () => {
             </div>
             <div className=" mt-[15px]">
               <h4 className="mb-[6px] text-[16px]  text-primary font-semibold">
+                National security number
+              </h4>
+              <input
+                className="border border-light w-full placeholder:text-[16px] placeholder:text-light px-[16px] py-[12px] rounded-[20px] outline-primary text-primary "
+                type="number"
+                name="security"
+                id="security"
+                placeholder="Enter national "
+              />
+            </div>
+            <div className=" mt-[15px]">
+              <h4 className="mb-[6px] text-[16px]  text-primary font-semibold">
                 Player position
               </h4>
               <input
@@ -83,18 +95,6 @@ const OnePlayer = () => {
                 name="positio"
                 id="position"
                 placeholder="Enter player position"
-              />
-            </div>
-            <div className=" mt-[15px]">
-              <h4 className="mb-[6px] text-[16px]  text-primary font-semibold">
-                Name
-              </h4>
-              <input
-                className="border border-light w-full placeholder:text-[16px] placeholder:text-light px-[16px] py-[12px] rounded-[20px] outline-primary text-primary "
-                type="name"
-                name="name"
-                id="name"
-                placeholder="Enter full name"
               />
             </div>
           </form>
