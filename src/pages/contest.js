@@ -39,16 +39,16 @@ const Contest = () => {
       </div>
 
       <div className="lg:grid grid-cols-3 mt-[20px] gap-[2%] hidden">
-        <Upcoming />
-        <Upcoming />
-        <Upcoming />
+        <Upcoming date="11" />
+        <Upcoming date="18" />
+        <Upcoming date="21" />
       </div>
 
       <div className="lg:hidden mt-[20px]">
         <Slider {...settings}>
-          <Upcoming />
-          <Upcoming />
-          <Upcoming />
+          <Upcoming date="11" />
+          <Upcoming date="18" />
+          <Upcoming date="21" />
         </Slider>
       </div>
     </div>

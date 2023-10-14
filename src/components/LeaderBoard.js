@@ -8,9 +8,7 @@ const LeaderBoard = () => {
         <table className="w-full md:min-w-[1000px] min-w-[1000px]   ">
           <thead className="">
             <tr className="font-semibold text-light text-[16px] border-b-[1px] border-gray-200">
-              <td className="text-primary leaderboardtd text-start">
-                Rankinig
-              </td>
+              <td className="text-primary leaderboardtd text-start">Ranking</td>
               <td className="text-primary leaderboardtd text-start">Name</td>
               <td className="text-primary leaderboardtd text-start">
                 Players position

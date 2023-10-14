@@ -2,7 +2,7 @@ import { GLOBALTYPES } from "./globalTypes";
 import { postDataApi, getDataApi } from "../../utils/fetchData";
 
 export const createPlayer = (data, image) => async (dispatch) => {
-  const projectId = 3;
+  const projectId = process.env.REACT_APP_PROJECT_ID;
   const name = `${data.first_name} ${data.last_name}`;
 
   try {
@@ -35,7 +35,7 @@ export const createPlayer = (data, image) => async (dispatch) => {
 };
 
 export const getPlayers = () => async (dispatch) => {
-  const projectId = 3;
+  const projectId = process.env.REACT_APP_PROJECT_ID;
   try {
     dispatch({ type: GLOBALTYPES.GETPLAYER_REQUEST });
 
@@ -56,10 +56,11 @@ export const getPlayers = () => async (dispatch) => {
 };
 
 export const getOnePlayer = (id) => async (dispatch) => {
+  const projectId = process.env.REACT_APP_PROJECT_ID;
   try {
     dispatch({ type: GLOBALTYPES.GETPLAYER_REQUEST });
 
-    const res = await getDataApi(`3/nfts/${id}`);
+    const res = await getDataApi(`${projectId}/nfts/${id}`);
 
     dispatch({
       type: GLOBALTYPES.GETPLAYER_SUCCESS,

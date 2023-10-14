@@ -1,7 +1,7 @@
 import React from "react";
 import dribblingtest from "../assets/dribblingtest.png";
 
-const Upcoming = () => {
+const Upcoming = ({ date }) => {
   return (
     <div>
       <div className="bg-gray-100 p-[5%] lg:p-[6%] rounded-[20px]">
@@ -18,7 +18,9 @@ const Upcoming = () => {
                 <h4 className="flex justify-center font-semibold text-[18px]">
                   13:00
                 </h4>
-                <h4 className="flex justify-center font-medium">Sat, 21 Nov</h4>
+                <h4 className="flex justify-center font-medium">
+                  Sat, {date} Nov
+                </h4>
               </div>
             </div>
           </div>

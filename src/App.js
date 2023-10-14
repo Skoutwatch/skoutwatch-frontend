@@ -9,6 +9,7 @@ import Navbar from "./components/Navbar";
 import Alert from "./components/alert/Alert";
 import Landing from "./components/Landing";
 import PageRender from "./customRouter/PageRender";
+import Login from "./pages/Login";
 
 function App() {
   const [show, setShow] = useState(false);
@@ -25,7 +26,7 @@ function App() {
 function AppContent({ show, setShow, auth }) {
   const location = useLocation();
   const isHomePage = location.pathname === "/";
-  const isLoginPage = location.pathname === "/login";
+  const isLoginPage = location.pathname === "/Login";
 
   return (
     <div>
@@ -37,6 +38,7 @@ function AppContent({ show, setShow, auth }) {
             path="/"
             element={<Landing show={show} setShow={setShow} />}
           />
+          <Route exact path="/Login" element={<Login />} />
           <Route path="/:page" element={<PageRender />} />
           <Route exact path="/:page/:id" element={<PageRender />} />
           <Route exact path="/:page/:id/:extraId" element={<PageRender />} />

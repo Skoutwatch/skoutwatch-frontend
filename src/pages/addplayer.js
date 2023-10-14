@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import { FiUploadCloud } from "react-icons/fi";
 import { UseSelector, useDispatch, useSelector } from "react-redux";
 import { createPlayer } from "../redux/actions/playersAction";
@@ -18,6 +19,8 @@ const Addplayer = () => {
   const [files, setFiles] = useState(null);
   const [name2, setName2] = useState(null);
 
+  console.log(playerData);
+
   const {
     first_name,
     last_name,
@@ -29,16 +32,25 @@ const Addplayer = () => {
   } = playerData;
 
   const dispatch = useDispatch();
-  const { alert } = useSelector((state) => state);
+  const { alert, player } = useSelector((state) => state);
 
   const handleChangeInput = (e) => {
     const { name, value } = e.target;
     setPlayerData({ ...playerData, [name]: value });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    dispatch(createPlayer(playerData));
+  const history = useNavigate();
+
+  const pushPlayer = player.redirect;
+
+  const handleSubmit = async (e) => {
+    try {
+      e.preventDefault();
+      await dispatch(createPlayer(playerData));
+      if (pushPlayer === true) {
+        history("/players");
+      }
+    } catch (error) {}
   };
 
   const inputRef = useRef();
@@ -145,6 +157,7 @@ const Addplayer = () => {
                 placeholder="Enter first name"
                 onChange={handleChangeInput}
                 value={first_name}
+                required
               />
             </div>
             <div className=" mt-[20px]">
@@ -159,6 +172,7 @@ const Addplayer = () => {
                 placeholder="Enter last name"
                 onChange={handleChangeInput}
                 value={last_name}
+                required
               />
             </div>
           </div>
@@ -175,6 +189,7 @@ const Addplayer = () => {
                 placeholder="Enter age here"
                 onChange={handleChangeInput}
                 value={age}
+                required
               />
             </div>
             <div className=" mt-[20px]">
@@ -189,6 +204,7 @@ const Addplayer = () => {
                 placeholder="Select nationality here"
                 onChange={handleChangeInput}
                 value={nationality}
+                required
               />
             </div>
           </div>
@@ -204,6 +220,7 @@ const Addplayer = () => {
               placeholder="Enter email address"
               onChange={handleChangeInput}
               value={email}
+              required
             />
           </div>
 
@@ -219,6 +236,7 @@ const Addplayer = () => {
               placeholder="Enter player position"
               onChange={handleChangeInput}
               value={player_position}
+              required
             />
           </div>
 
@@ -234,6 +252,7 @@ const Addplayer = () => {
               placeholder="Enter national "
               onChange={handleChangeInput}
               value={national_security_number}
+              required
             />
           </div>
           <div className="flex justify-end mt-[40px]">

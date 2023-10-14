@@ -3,6 +3,7 @@ import { GLOBALTYPES } from "../actions/globalTypes";
 const initialStore = {
   loading: false,
   player: [],
+  redirect: true,
   error: "",
 };
 
@@ -12,18 +13,21 @@ const playerReducer = (state = initialStore, action) => {
       return {
         ...state,
         loading: true,
+        redirect: false,
       };
 
     case GLOBALTYPES.PLAYER_SUCCESS:
       return {
         loading: false,
         player: action.payload,
+        redirect: true,
         error: "",
       };
 
     case GLOBALTYPES.PLAYER_FAILURE:
       return {
         loading: false,
+        redirect: false,
         player: [],
         error: action.payload,
       };
