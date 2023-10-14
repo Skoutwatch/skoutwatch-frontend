@@ -26,7 +26,7 @@ const Navbar = () => {
             <h4 className="text-black text-[12px] md:text-[16px] lg:text-[16px] font-semibold ">
               <NavLink
                 className="flex items-center gap-[10px] lg:py-[30px] py-[20px]"
-                to="/Overview"
+                to="/Dashboard"
                 style={({ isActive }) => {
                   return {
                     color: isActive ? "#D99A26" : "#666666",
@@ -160,7 +160,7 @@ const Navbar = () => {
         <div className=" w-[100%] justify-between grid grid-cols-5 items-center">
           <NavLink
             className="grid justify-items-center py-[20px] w-full text-black text-[12px] md:text-[16px] lg:text-[16px] font-semibold"
-            to="/Overview"
+            to="/Dashboard"
             style={({ isActive }) => {
               return {
                 color: isActive ? "#D99A26" : "#666666",

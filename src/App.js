@@ -40,7 +40,7 @@ function AppContent({ show, setShow, auth }) {
             element={<Landing show={show} setShow={setShow} />}
           />
           <Route exact path="/Login" element={<Login />} />
-          <Route exact path="/Overview" element={<Overview />} />
+          <Route exact path="/Dashboard" element={<Overview />} />
           <Route path="/:page" element={<PageRender />} />
           <Route exact path="/:page/:id" element={<PageRender />} />
           <Route exact path="/:page/:id/:extraId" element={<PageRender />} />
