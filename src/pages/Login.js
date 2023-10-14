@@ -105,7 +105,7 @@ const Login = () => {
                 Forgot password
               </h4>
             </div>
-            <NavLink to="/overview">
+            <NavLink to="/Overview">
               <button
                 type="submit"
                 className="w-full py-[12px] text-[16px] font-semibold bg-primary text-white rounded-[30px] mt-[24px] "

@@ -10,6 +10,7 @@ import Alert from "./components/alert/Alert";
 import Landing from "./components/Landing";
 import PageRender from "./customRouter/PageRender";
 import Login from "./pages/Login";
+import Overview from "./pages/Overview";
 
 function App() {
   const [show, setShow] = useState(false);
@@ -39,6 +40,7 @@ function AppContent({ show, setShow, auth }) {
             element={<Landing show={show} setShow={setShow} />}
           />
           <Route exact path="/Login" element={<Login />} />
+          <Route exact path="/Overview" element={<Overview />} />
           <Route path="/:page" element={<PageRender />} />
           <Route exact path="/:page/:id" element={<PageRender />} />
           <Route exact path="/:page/:id/:extraId" element={<PageRender />} />
