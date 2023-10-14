@@ -14,7 +14,7 @@ export const createPlayer = (data, image) => async (dispatch) => {
       symbol: "swu",
       description: "player",
       image:
-        "https://www.sports247.ng/wp-content/uploads/2022/06/David-Ankeye-250d-4206-832f-a328e43858f8.jpeg",
+        "https://cms.groupeditors.com/img/AFP_bebc936012dd157f9c1aef8f2c4d98ff093ea23a.jpg?crop=173,0,683,510&w=400&h=400&scale=both",
     });
     console.log(res);
 
