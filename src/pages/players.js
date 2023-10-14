@@ -1,10 +1,20 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { MagnifyingGlass } from "@phosphor-icons/react";
 import stroke3 from "../assets/stroke3.png";
 import topplayer from "../assets/topplayer.png";
 import { NavLink } from "react-router-dom";
+import { getPlayers } from "../redux/actions/playersAction";
+import { useSelector, useDispatch } from "react-redux";
 
 const Players = () => {
+  const { player } = useSelector((state) => state);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getPlayers());
+    console.log(player?.player?.data?.results);
+  }, [dispatch]);
+
   return (
     <div className="px-[5%] md:px-[3%] pt-[90px] xl:pb-[60px] pb-[120px] xl:pt-[30px]">
       <div className=" md:px-[3%]  xl:pb-[60px] md:pb-[3%] pb-[50px]  md:border-gray-200 md:border-[1px] md:rounded-[50px]">
@@ -23,39 +33,49 @@ const Players = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-          <NavLink to="/players/1">
-            <div>
-              <div className="bg-[#ECC755] relative rounded-t-[15px] ">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-[2%]">
+          {player?.player?.data?.results &&
+          player?.player?.data?.results?.length
+            ? player?.player?.data?.results?.map((data) => (
                 <div>
-                  <img className="" src={stroke3} />
-                </div>
-                <div className="absolute bottom-0  justify-center left-0 right-0">
-                  <div className="  relative">
-                    <img className="" src={topplayer} />
-                  </div>
-                </div>
-              </div>
-              <div className="bg-gray-100 rounded-b-[15px] p-[5%]">
-                <div className="flex justify-between items-center">
-                  <div>
-                    <h4 className="lg:text-[25px] text-[20px] font-thin">
-                      Cameron
-                    </h4>
-                    <h4 className="2xl:text-[40px] text-[30px]  font-semibold">
-                      Willianson
-                    </h4>
-                  </div>
+                  <NavLink to={`/players/${data?.id}`}>
+                    <div>
+                      <div className="bg-[#ECC755] relative rounded-t-[15px] ">
+                        <div>
+                          <img className="h-[300px]" src={stroke3} />
+                        </div>
+                        <div className="absolute bottom-0  justify-center left-0 right-0">
+                          <div className="  relative">
+                            <img
+                              className="h-[300px] w-full object-contain"
+                              src={data?.image}
+                            />
+                          </div>
+                        </div>
+                      </div>
+                      <div className="bg-gray-100 rounded-b-[15px] p-[5%]">
+                        <div className="flex justify-between items-center">
+                          <div>
+                            <h4 className="lg:text-[25px] text-[20px] font-thin">
+                              {data?.attributes?.first_name}
+                            </h4>
+                            <h4 className="2xl:text-[40px] text-[30px]  font-semibold">
+                              {data?.attributes?.last_name}
+                            </h4>
+                          </div>
 
-                  <div>
-                    <h4 className="lg:text-[50px] text-[35px] md:text-[50px] font-extrabold">
-                      37
-                    </h4>
-                  </div>
+                          <div>
+                            <h4 className="lg:text-[50px] text-[35px] md:text-[50px] font-extrabold">
+                              {data?.attributes?.age}
+                            </h4>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </NavLink>
                 </div>
-              </div>
-            </div>
-          </NavLink>
+              ))
+            : null}
         </div>
       </div>
     </div>

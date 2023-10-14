@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { NavLink, Link, useNavigate } from "react-router-dom";
 import logo from "../assets/logo.png";
 import soccerplayer from "../assets/soccerplayer.png";
 import logo2 from "../assets/logo2.png";
@@ -105,13 +105,15 @@ const Login = () => {
                 Forgot password
               </h4>
             </div>
-            <button
-              type="submit"
-              className="w-full py-[12px] text-[16px] font-semibold bg-primary text-white rounded-[30px] mt-[24px] "
-              // disabled={email && password ? false : true}
-            >
-              Login
-            </button>
+            <NavLink to="/overview">
+              <button
+                type="submit"
+                className="w-full py-[12px] text-[16px] font-semibold bg-primary text-white rounded-[30px] mt-[24px] "
+                // disabled={email && password ? false : true}
+              >
+                Login
+              </button>
+            </NavLink>
           </form>
         </div>
       </div>

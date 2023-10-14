@@ -1,51 +1,48 @@
-import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import PrivateRouter from "./customRouter/PrivateRouter";
-import PageRender from "./customRouter/PageRender";
+import React, { useState } from "react";
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  useLocation,
+} from "react-router-dom";
 import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
-import Intro from "./components/Intro";
+import Alert from "./components/alert/Alert";
 import Landing from "./components/Landing";
-import Overview from "./pages/Overview";
-import Login from "./pages/Login";
+import PageRender from "./customRouter/PageRender";
 
 function App() {
   const [show, setShow] = useState(false);
   const auth = true;
+
   return (
     <Router>
-      <div className={auth === true ? `visible` : `hidden`}>
-        <Navbar />
-      </div>
+      <Alert />
+      <AppContent show={show} setShow={setShow} auth={auth} />
+    </Router>
+  );
+}
+
+function AppContent({ show, setShow, auth }) {
+  const location = useLocation();
+  const isHomePage = location.pathname === "/";
+  const isLoginPage = location.pathname === "/login";
+
+  return (
+    <div>
+      {!isHomePage && !isLoginPage && <Navbar />}
       <div className="font-lato">
         <Routes>
           <Route
             exact
             path="/"
-            element={
-              auth === true ? (
-                <Landing show={show} setShow={setShow} />
-              ) : (
-                // <Overview />
-                <Landing show={show} setShow={setShow} />
-              )
-            }
+            element={<Landing show={show} setShow={setShow} />}
           />
-          <Route
-            exact
-            path="/login"
-            element={auth === false ? <Login /> : <Overview />}
-          />
-
-          <Route exact path="/" element={<PrivateRouter />}>
-            <Route exact path="/:page" element={<PageRender />} />
-            <Route exact path="/:page/:id" element={<PageRender />} />
-            <Route exact path="/:page/:id/:extraId" element={<PageRender />} />
-          </Route>
+          <Route path="/:page" element={<PageRender />} />
+          <Route exact path="/:page/:id" element={<PageRender />} />
+          <Route exact path="/:page/:id/:extraId" element={<PageRender />} />
         </Routes>
       </div>
-      {/* <Footer /> */}
-    </Router>
+    </div>
   );
 }
 

@@ -2,7 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import Avatar from "./Avatar";
 import logo from "../assets/logo.png";
-import { AiFillHome } from "react-icons/ai";
+import { MdViewComfy } from "react-icons/md";
 import { BiSolidMoviePlay } from "react-icons/bi";
 import { MdPersonSearch } from "react-icons/md";
 import { IoCaretDownOutline } from "react-icons/io5";
@@ -26,7 +26,7 @@ const Navbar = () => {
             <h4 className="text-black text-[12px] md:text-[16px] lg:text-[16px] font-semibold ">
               <NavLink
                 className="flex items-center gap-[10px] lg:py-[30px] py-[20px]"
-                to="/"
+                to="/overview"
                 style={({ isActive }) => {
                   return {
                     color: isActive ? "#D99A26" : "#666666",
@@ -36,8 +36,8 @@ const Navbar = () => {
                   };
                 }}
               >
-                <AiFillHome className="text-[25px]" />
-                Home
+                <MdViewComfy className="text-[25px]" />
+                Overview
               </NavLink>
             </h4>
           </div>
@@ -124,7 +124,7 @@ const Navbar = () => {
             <h4 className="text-black text-[12px] md:text-[16px] lg:text-[16px] font-semibold ">
               <NavLink
                 className="flex items-center gap-[10px] lg:py-[30px] py-[20px]"
-                to="/add"
+                to="/addplayer"
                 style={({ isActive }) => {
                   return {
                     color: isActive ? "#D99A26" : "#666666",
@@ -160,7 +160,7 @@ const Navbar = () => {
         <div className=" w-[100%] justify-between grid grid-cols-5 items-center">
           <NavLink
             className="grid justify-items-center py-[20px] w-full text-black text-[12px] md:text-[16px] lg:text-[16px] font-semibold"
-            to="/"
+            to="/overview"
             style={({ isActive }) => {
               return {
                 color: isActive ? "#D99A26" : "#666666",
@@ -170,8 +170,8 @@ const Navbar = () => {
               };
             }}
           >
-            <AiFillHome className="text-[25px]" />
-            Home
+            <MdViewComfy className="text-[25px]" />
+            Overview
           </NavLink>
 
           <NavLink
