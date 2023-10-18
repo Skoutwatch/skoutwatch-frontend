@@ -14,7 +14,7 @@ export const createPlayer = (data, image) => async (dispatch) => {
       symbol: "swu",
       description: "player",
       image:
-        "https://cms.groupeditors.com/img/AFP_bebc936012dd157f9c1aef8f2c4d98ff093ea23a.jpg?crop=173,0,683,510&w=400&h=400&scale=both",
+        "https://cms.forbesafrica.com/wp-content/uploads/2023/01/GettyImages-1238143674-683x1024.jpg",
     });
     console.log(res);
 

@@ -12,7 +12,7 @@ const Players = () => {
 
   useEffect(() => {
     dispatch(getPlayers());
-    console.log(player?.player?.data?.results);
+    // console.log(player?.player?.data?.results);
   }, [dispatch]);
 
   return (

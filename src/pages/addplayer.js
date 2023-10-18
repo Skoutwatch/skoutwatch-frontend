@@ -19,8 +19,6 @@ const Addplayer = () => {
   const [files, setFiles] = useState(null);
   const [name2, setName2] = useState(null);
 
-  console.log(playerData);
-
   const {
     first_name,
     last_name,

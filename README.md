@@ -1,70 +1,390 @@
-# Getting Started with Create React App
+[![Contributors](https://img.shields.io/github/contributors/Skoutwatch/skoutwatch-frontend)](https://github.com/Skoutwatch/skoutwatch-frontend/graphs/contributors)
+[![Forks](https://img.shields.io/github/forks/Skoutwatch/skoutwatch-frontend)](https://github.com/Skoutwatch/skoutwatch-frontend/forks)
+[![Issues](https://img.shields.io/github/issues/Skoutwatch/skoutwatch-frontend)](https://github.com/Skoutwatch/skoutwatch-frontend/issues)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<!-- PROJECT LOGO -->
+<br />
+<div align="center"> 
+  <img src="./src/assets/logo2.png" alt="Logo" width="300">
 
-## Available Scripts
+  <h3 align="center">Frontend Assessment Test</h3>
 
-In the project directory, you can run:
+  <p align="center">
+    Players Skouting
+    <br />
+    <a href="https://main.d1y9ht4tz4qfys.amplifyapp.com/"><strong>View Demo »</strong></a>
+    
+    
+  </p>
+</div>
 
-### `npm start`
+<!-- TABLE OF CONTENTS -->
+  <p>Table of Contents</p>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#built-with">Built With</a></li> 
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#installation">Installation</a></li>
+      </ul>
+    </li>
+    <li><a href="#usage">Usage</a>
+    <ul>
+       <li><a href="#api-consumption">API Consumption</a></li>
+    </ul>
+    </li> 
+  </ol>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+<!-- ABOUT THE PROJECT -->
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## About The Project
 
-### `npm test`
+![To-Note-Document-Manager](/screenshots/home.png)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+This is a frontend application built with React.js that consumes the endpoints listed at https://devnet.underdogprotocol.com/v2/projects.
 
-### `npm run build`
+It takes care of:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- creating players
+- Viewing upcoming matches and ongoing matches
+- Viewing players
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+While utilizing the underdog technology
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Built With
 
-### `npm run eject`
+[<img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" height="50" alt="React">](https://reactjs.org/)
+[<img src="https://redux.js.org/img/redux.svg" height="50" alt="Redux">](https://redux.js.org)
+[<img src="https://seeklogo.com/images/T/tailwind-css-logo-5AD4175897-seeklogo.com.png" height="50" alt="Tailwind CSS">](https://tailwindcss.com/)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+<!-- GETTING STARTED -->
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Getting Started
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+To get a local copy up and running follow these simple example steps.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Prerequisites
 
-## Learn More
+You need to have `npm` installed on your computer in order to be able to install and run the project.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- npm
+  ```sh
+  npm install npm@latest -g
+  ```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Installation
 
-### Code Splitting
+Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+1. Clone the repo
+   ```sh
+   git clone https://github.com/Skoutwatch/skoutwatch-frontend.git
+   ```
+2. Install NPM packages
+   ```sh
+   npm install
+   ```
+3. Run the Project
+   ```sh
+   npm start
+   ```
+4. Navigate to `http://localhost:3000/` (or the exposed port) on your favourite browser
 
-### Analyzing the Bundle Size
+<!-- USAGE EXAMPLES -->
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Usage
 
-### Making a Progressive Web App
+The following shows the functionality of the application with respect to the endpoints provided.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### API Consumption
 
-### Advanced Configuration
+```js
+export const getDataApi = async (url, token) => {
+  const res = await axios.get(
+    `
+${process.env.REACT_APP_BASE_URL}/${url}`,
+    {
+      headers: {
+        Authorization: `Bearer ${process.env.REACT_APP_API_KEY}`,
+      },
+    }
+  );
+  return res;
+};
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+export const postDataApi = async (url, post, token) => {
+  const res = await axios.post(
+    `
+${process.env.REACT_APP_BASE_URL}/${url}`,
+    post,
+    {
+      headers: {
+        Authorization: `Bearer ${process.env.REACT_APP_API_KEY}`,
+      },
+    }
+  );
+  return res;
+};
 
-### Deployment
+export const logoutApi = async (url, token) => {
+  const res = await axios.post(
+    `
+${process.env.REACT_APP_BASE_URL}/${url}`,
+    {
+      headers: {
+        Authorization: `Bearer ${process.env.REACT_APP_API_KEY}`,
+      },
+    }
+  );
+  return res;
+};
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+export const putDataApi = async (url, post, token) => {
+  const res = await axios.put(
+    `
+${process.env.REACT_APP_BASE_URL}/${url}`,
+    post,
+    {
+      headers: {
+        Authorization: `Bearer ${process.env.REACT_APP_API_KEY}`,
+      },
+    }
+  );
+  return res;
+};
 
-### `npm run build` fails to minify
+export const patchDataApi = async (url, post, token) => {
+  const res = await axios.patch(
+    `
+${process.env.REACT_APP_BASE_URL}/${url}`,
+    post,
+    {
+      headers: {
+        Authorization: `Bearer ${process.env.REACT_APP_API_KEY}`,
+      },
+    }
+  );
+  return res;
+};
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+export const deleteDataApi = async (url, token) => {
+  const res = await axios.delete(
+    `
+${process.env.REACT_APP_BASE_URL}/${url}`,
+    {
+      headers: {
+        Authorization: `Bearer ${process.env.REACT_APP_API_KEY}`,
+      },
+    }
+  );
+  return res;
+};
+```
+
+### 1. Create player
+
+```js
+const res = await postDataApi(`${projectId}/nfts`, {
+  attributes: data,
+  name: name,
+  symbol: "swu",
+  description: "player",
+  image: image,
+});
+```
+
+<table>
+<tr>
+<th>Component</th>
+<th>API Call</th>
+</tr>
+<tr>
+<td>
+  
+<img src="./screenshots/addplayer.png" alt="Logo" width="600" />
+<p>./src/pages/addplayer.js</p> 
+<p><strong>Add player Screen</strong></p>
+</td>
+<td>
+
+```js
+// ./src/redux/actions/playersAction.js
+export const createPlayer = (data, image) => async (dispatch) => {
+  const projectId = process.env.REACT_APP_PROJECT_ID;
+  const name = `${data.first_name} ${data.last_name}`;
+
+  try {
+    dispatch({ type: GLOBALTYPES.PLAYER_CREATE });
+
+    const res = await postDataApi(`${projectId}/nfts`, {
+      attributes: data,
+      name: name,
+      symbol: "swu",
+      description: "player",
+      image: image,
+    });
+
+    dispatch({
+      type: GLOBALTYPES.PLAYER_SUCCESS,
+      playload: res,
+    });
+  } catch (error) {
+    dispatch({
+      type: GLOBALTYPES.PLAYER_FAILURE,
+      payload: {
+        error: "An error has occured",
+      },
+    });
+  }
+};
+```
+
+</td>
+</tr>
+</table>
+
+<br/>
+
+### 2. View all players
+
+```js
+const res = await getDataApi(`${projectId}/nfts`);
+```
+
+<table>
+<tr>
+<th>Component</th>
+<th>API Call</th>
+</tr>
+<tr>
+<td>
+  
+<img src="./screenshots/players.png" alt="Logo" width="600">
+<p>./src/pages/addplayer.js</p>
+<p><strong>View all players screen</strong></p> 
+</td>
+<td>
+
+```js
+// ./src/redux/actions/playersAction.js
+export const getPlayers = () => async (dispatch) => {
+  const projectId = process.env.REACT_APP_PROJECT_ID;
+  try {
+    dispatch({ type: GLOBALTYPES.GETPLAYER_REQUEST });
+
+    const res = await getDataApi(`${projectId}/nfts`);
+
+    dispatch({
+      type: GLOBALTYPES.GETPLAYER_SUCCESS,
+      payload: res,
+    });
+  } catch (error) {
+    dispatch({
+      type: GLOBALTYPES.GETPLAYER_FAILURE,
+      payload: {
+        error: "An error just occured",
+      },
+    });
+  }
+};
+```
+
+</td>
+</tr>
+</table>
+
+<br/>
+
+### 3. View one player
+
+```js
+const res = await getDataApi(`${projectId}/nfts/${id}`);
+```
+
+<table>
+<tr>
+<th>Component</th>
+<th>API Call</th>
+</tr>
+<tr>
+<td>
+
+<img src="./screenshots/oneplayer.png" alt="Logo" width="600" />
+<p>./src/pages/players/[id].js</p>
+<p><strong>View one player screen</strong></p>  
+</td>
+<td>
+
+```js
+// ./src/redux/actions/playersAction.js
+export const getOnePlayer = (id) => async (dispatch) => {
+  const projectId = process.env.REACT_APP_PROJECT_ID;
+  try {
+    dispatch({ type: GLOBALTYPES.GETPLAYER_REQUEST });
+
+    const res = await getDataApi(`${projectId}/nfts/${id}`);
+
+    dispatch({
+      type: GLOBALTYPES.GETPLAYER_SUCCESS,
+      payload: res,
+    });
+  } catch (error) {
+    dispatch({
+      type: GLOBALTYPES.GETPLAYER_FAILURE,
+      payload: {
+        error: "An error has just occured",
+      },
+    });
+  }
+};
+```
+
+</td>
+</tr>
+</table>
+
+<br/>
+
+### 4. Explore on solscan
+
+```js
+`https://xray.helius.xyz/token/${mintaddress}?network=devnet`;
+```
+
+<table>
+<tr>
+<th>Component</th>
+<th>API Call</th>
+</tr>
+<tr>
+<td>
+
+<img src="./screenshots/solscan.png" alt="Logo" width="600" />
+<p><strong>View one player on solscan</strong></p>  
+</td>
+<td>
+
+```js
+// ./src/pages/players/[id].js
+<a
+  href={`https://xray.helius.xyz/token/${onePlayer?.mintAddress}?network=devnet`}
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  <button className="text-white text-[14px] md:text-[16px] bg-primary py-[8px] md:py-[10px] px-[12px] md:px-[16px] rounded-[30px]">
+    Explore on Solscan
+  </button>
+</a>
+```
+
+</td>
+</tr>
+</table>
+
+<br/>

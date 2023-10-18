@@ -107,35 +107,35 @@ const OnePlayer = () => {
               <h4 className="md:px-[5%] py-[3%] text-[22px] font-semibold text-primary">
                 Defence
               </h4>
-              <div className="flex border-t-[1px] border-gray-200 flex justify-between md:px-[5%] py-[3%] px-[10px] md:text-[16px] text-primary">
+              <div className=" border-t-[1px] border-gray-200 flex justify-between md:px-[5%] py-[3%] px-[10px] md:text-[16px] text-primary">
                 <h4>Clean sheets</h4>
                 <h4>9</h4>
               </div>
-              <div className="flex border-t-[1px] border-gray-200 flex justify-between md:px-[5%] py-[3%] px-[10px] md:text-[16px] text-primary">
+              <div className=" border-t-[1px] border-gray-200 flex justify-between md:px-[5%] py-[3%] px-[10px] md:text-[16px] text-primary">
                 <h4>Goals Conceded</h4>
                 <h4>20</h4>
               </div>
-              <div className="flex border-t-[1px] border-gray-200 flex justify-between md:px-[5%] py-[3%] px-[10px] md:text-[16px] text-primary">
+              <div className=" border-t-[1px] border-gray-200 flex justify-between md:px-[5%] py-[3%] px-[10px] md:text-[16px] text-primary">
                 <h4>Tackles</h4>
                 <h4>12</h4>
               </div>
-              <div className="flex border-t-[1px] border-gray-200 flex justify-between md:px-[5%] py-[3%] px-[10px] md:text-[16px] text-primary">
+              <div className=" border-t-[1px] border-gray-200 flex justify-between md:px-[5%] py-[3%] px-[10px] md:text-[16px] text-primary">
                 <h4>Tackle success %</h4>
                 <h4>70%</h4>
               </div>
-              <div className="flex border-t-[1px] border-gray-200 flex justify-between md:px-[5%] py-[3%] px-[10px] md:text-[16px] text-primary">
+              <div className=" border-t-[1px] border-gray-200 flex justify-between md:px-[5%] py-[3%] px-[10px] md:text-[16px] text-primary">
                 <h4>Blocked shot</h4>
                 <h4>10</h4>
               </div>
-              <div className="flex border-t-[1px] border-gray-200 flex justify-between md:px-[5%] py-[3%] px-[10px] md:text-[16px] text-primary">
+              <div className=" border-t-[1px] border-gray-200 flex justify-between md:px-[5%] py-[3%] px-[10px] md:text-[16px] text-primary">
                 <h4>Interceptions</h4>
                 <h4>8</h4>
               </div>
-              <div className="flex border-t-[1px] border-gray-200 flex justify-between md:px-[5%] py-[3%] px-[10px] md:text-[16px] text-primary">
+              <div className=" border-t-[1px] border-gray-200 flex justify-between md:px-[5%] py-[3%] px-[10px] md:text-[16px] text-primary">
                 <h4>Clearances</h4>
                 <h4>60</h4>
               </div>
-              <div className="flex border-t-[1px] border-gray-200 flex justify-between md:px-[5%] py-[3%] px-[10px] md:text-[16px] text-primary">
+              <div className=" border-t-[1px] border-gray-200 flex justify-between md:px-[5%] py-[3%] px-[10px] md:text-[16px] text-primary">
                 <h4>Own goals</h4>
                 <h4>1</h4>
               </div>
@@ -146,35 +146,35 @@ const OnePlayer = () => {
               <h4 className="md:px-[5%] py-[3%] text-[22px] font-semibold text-primary">
                 Team play
               </h4>
-              <div className="flex border-t-[1px] border-gray-200 flex justify-between md:px-[5%] py-[3%] px-[10px] md:text-[16px] text-primary">
+              <div className=" border-t-[1px] border-gray-200 flex justify-between md:px-[5%] py-[3%] px-[10px] md:text-[16px] text-primary">
                 <h4>Assists</h4>
                 <h4>9</h4>
               </div>
-              <div className="flex border-t-[1px] border-gray-200 flex justify-between md:px-[5%] py-[3%] px-[10px] md:text-[16px] text-primary">
+              <div className=" border-t-[1px] border-gray-200 flex justify-between md:px-[5%] py-[3%] px-[10px] md:text-[16px] text-primary">
                 <h4>Passes</h4>
                 <h4>2340</h4>
               </div>
-              <div className="flex border-t-[1px] border-gray-200 flex justify-between md:px-[5%] py-[3%] px-[10px] md:text-[16px] text-primary">
+              <div className=" border-t-[1px] border-gray-200 flex justify-between md:px-[5%] py-[3%] px-[10px] md:text-[16px] text-primary">
                 <h4>Passes per match</h4>
                 <h4>20.1</h4>
               </div>
-              <div className="flex border-t-[1px] border-gray-200 flex justify-between md:px-[5%] py-[3%] px-[10px] md:text-[16px] text-primary">
+              <div className=" border-t-[1px] border-gray-200 flex justify-between md:px-[5%] py-[3%] px-[10px] md:text-[16px] text-primary">
                 <h4>Big Chances Created</h4>
                 <h4>7</h4>
               </div>
-              <div className="flex border-t-[1px] border-gray-200 flex justify-between md:px-[5%] py-[3%] px-[10px] md:text-[16px] text-primary">
+              <div className=" border-t-[1px] border-gray-200 flex justify-between md:px-[5%] py-[3%] px-[10px] md:text-[16px] text-primary">
                 <h4>Crosses</h4>
                 <h4>70</h4>
               </div>
-              <div className="flex border-t-[1px] border-gray-200 flex justify-between md:px-[5%] py-[3%] px-[10px] md:text-[16px] text-primary">
+              <div className=" border-t-[1px] border-gray-200 flex justify-between md:px-[5%] py-[3%] px-[10px] md:text-[16px] text-primary">
                 <h4>Cross accuracy %</h4>
                 <h4>30%</h4>
               </div>
-              <div className="flex border-t-[1px] border-gray-200 flex justify-between md:px-[5%] py-[3%] px-[10px] md:text-[16px] text-primary">
+              <div className=" border-t-[1px] border-gray-200 flex justify-between md:px-[5%] py-[3%] px-[10px] md:text-[16px] text-primary">
                 <h4>Through</h4>
                 <h4>6</h4>
               </div>
-              <div className="flex border-t-[1px] border-gray-200 flex justify-between md:px-[5%] py-[3%] px-[10px] md:text-[16px] text-primary">
+              <div className=" border-t-[1px] border-gray-200 flex justify-between md:px-[5%] py-[3%] px-[10px] md:text-[16px] text-primary">
                 <h4>Accurate long balls</h4>
                 <h4>90</h4>
               </div>

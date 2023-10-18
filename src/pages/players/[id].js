@@ -26,7 +26,7 @@ const Player = () => {
 
   const onePlayer = player?.player?.data;
 
-  console.log(player);
+  // console.log(player);
 
   return (
     <div className="px-[5%] md:px-[3%] pt-[90px] xl:pb-[60px] pb-[120px] xl:pt-[30px]">
