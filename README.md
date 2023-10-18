@@ -61,7 +61,7 @@ While utilizing the underdog technology
 
 [<img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" height="50" alt="React">](https://reactjs.org/)
 [<img src="https://redux.js.org/img/redux.svg" height="50" alt="Redux">](https://redux.js.org)
-[<img src="https://seeklogo.com/images/T/tailwind-css-logo-5AD4175897-seeklogo.com.png" height="50" alt="Tailwind CSS">](https://tailwindcss.com/)
+[<img src="https://upload.wikimedia.org/wikipedia/commons/4/46/Tailwind_CSS_logo.svg" height="50" alt="Tailwind CSS">](https://tailwindcss.com/)
 
 <!-- GETTING STARTED -->
 
