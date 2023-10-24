@@ -83,7 +83,7 @@ const Landing = ({ show, setShow }) => {
               </h4>
             </div>
             <div className="xl:flex hidden items-center">
-              <NavLink to="/Login">
+              <NavLink to="/login">
                 <h4 className="mr-[44px] text-[12px] md:text-[16px] lg:text-[16px] font-semibold">
                   {/* <NavLink to="#"> */}
                   Login
@@ -185,7 +185,7 @@ const Landing = ({ show, setShow }) => {
                     {/* </NavLink> */}
                   </h4>
                 </div>
-                <NavLink to="/Login">
+                <NavLink to="/login">
                   <div className="h-[70px] min-h-fit">
                     <h4
                       onClick={() => setShow(!show)}

@@ -1,6 +1,6 @@
 import React from "react";
 import Topplayers from "../components/Topplayers";
-import ContestTable from "../components/ContestTable";
+import OverviewTable from "../components/OverviewTable";
 import TopplayerTable from "../components/TopplayerTable";
 import { BsArrowRight } from "react-icons/bs";
 
@@ -15,7 +15,7 @@ const Overview = () => {
           <h4 className="pl-[30px] text-[20px] font-semibold h-[70px] flex items-center border-b-[1px] text-primary">
             Contests
           </h4>
-          <ContestTable />
+          <OverviewTable />
           <div className="h-[60px]">
             <button className="pr-[30px] text-[16px] font-semibold  flex justify-end items-center absolute right-0 bottom-[20px] gap-[12px] text-primary">
               <h4>Show all</h4>

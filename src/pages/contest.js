@@ -5,6 +5,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { AiOutlineLeft } from "react-icons/ai";
 import { AiOutlineRight } from "react-icons/ai";
+import ContestTable from "../components/ContestTable";
 
 const CustomPrevArrow = (props) => (
   <button {...props} className="custom-arrow custom-prev-arrow z-40">
@@ -30,7 +31,7 @@ const Contest = () => {
   };
 
   return (
-    <div className="px-[5%] md:px-[3%] pt-[90px] xl:pb-[60px] xl:pt-[30px]">
+    <div className="px-[5%] md:px-[3%] pt-[90px] xl:pb-[60px] xl:pt-[30px] pb-[100px]">
       <div className="text-primary">
         <h4 className="text-[24px]  sm:text-[30px] font-semibold">
           Upcoming Matches
@@ -50,6 +51,10 @@ const Contest = () => {
           <Upcoming date="18" />
           <Upcoming date="21" />
         </Slider>
+      </div>
+
+      <div className="mt-[30px] bg-gray-100 rounded-[20px]">
+        <ContestTable height="md:h-[calc(70vh-10.75rem)] h-[calc(80vh-10.75rem)]" />
       </div>
     </div>
   );
