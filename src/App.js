@@ -27,7 +27,7 @@ function App() {
 function AppContent({ show, setShow, auth }) {
   const location = useLocation();
   const isHomePage = location.pathname === "/";
-  const isLoginPage = location.pathname === "/Login";
+  const isLoginPage = location.pathname === "/login";
 
   return (
     <div>
